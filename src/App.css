@@ -1,7 +1,8 @@
 body {
   margin: 0;
   height: 100%;
-  width: 100%
+  width: 100%;
+  background: #6b6b6b;
 }
 
 ul {
@@ -12,19 +13,71 @@ li {
   text-decoration: none;
 }
 
-.container {
+.player-creator {
   display: flex;
-  align-items: center;
+  width: 375px;
+  margin: 10px auto;
+  background-color: #2b2f3b;
+  padding: 10px;
+  border-radius: 6px;
 }
 
-.column {
-  flex-direction: column;
-}
-
-.player-list {
+.player-grid {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.player {
-  padding: 0 1% 0;
+.player-card {
+  display: block;
+  max-width: 30%;
+  margin: 10px auto;
+  background-color: #2b2f3b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.player-card h1, h2 {
+  margin: 0;
+  text-align: center;
+  color: #adadad;
+}
+
+.balance-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.balance-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 2px;
+}
+
+.balance-button {
+  font-size: 18px;
+  width: 45px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add {
+  color: #8ad18d;
+  background-color: #335c35;
+  border-radius: 2px;
+  border-width: 2px;
+  border-color: lime;
+}
+
+.subtract {
+  color: #eb4034;
+  background-color: #5e0909;
+  border-radius: 2px;
+  border-width: 2px;
+  border-color: coral;
 }

@@ -1,33 +1,26 @@
 import React from 'react'
 
 export default function PlayerCreator(props) {
-  const [nameInput, setNameInput] = React.useState('')
+  const [nameInput, setNameInput] = React.useState(``)
   const [balanceInput, setBalanceInput] = React.useState(1500)
 
-  const handleNameChange = (event) => {
-    setNameInput(event.target.value)
-  }
+  const handleNameChange = (event) => setNameInput(event.target.value)
 
-  const handleBalanceChange = (event) => {
-    console.log(event.target.value)
-    const reg = /^[0-9\b]+$/;
-    if (event.target.value === '' || reg.test(event.target.value)) {
-      setBalanceInput(event.target.value)
-    }
-  }
+  const handleBalanceChange = (event) => setBalanceInput(event.target.value)
 
   const handleSubmit = () => {
-    const newPlayer = { name: nameInput, balance: balanceInput }
+    const name = nameInput === '' ? 'Default' : nameInput
+    const newPlayer = { name: name, balance: balanceInput }
     props.onNewPlayer(newPlayer)
-    setNameInput('')
+    setNameInput('Default')
     setBalanceInput(1500)
   }
 
   return (
-    <div>
-      <input type="text" onChange={handleNameChange} value={nameInput} />
+    <div className="player-creator">
+      <input type="text" placeholder="Default" onChange={handleNameChange} value={nameInput} />
       <input type="number" onChange={handleBalanceChange} value={balanceInput} />
-      <button onClick={handleSubmit} value="Test" />
+      <button onClick={handleSubmit}>Add Player</button>
     </div>
   )
 }
